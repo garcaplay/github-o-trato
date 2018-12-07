@@ -2,7 +2,7 @@
 
 const inputSelector= document.querySelector('.main__input');
 const btnSelector= document.querySelector('.main__btn');
-const divSelector= document.querySelector('.main__result');
+const listSelector= document.querySelector('.result__list');
 
 function searcher(){
     fetch(`https://api.github.com/users/${inputSelector.value}`)
@@ -12,17 +12,18 @@ function searcher(){
     .then(function(data) { 
 
         const dataName = data.name;
-        const dataArrName = dataName.split(" ");
-        console.log(dataArrName);
-        const dataFirstName = dataArrName[0];
+        // const dataArrName = dataName.split(" ");
+        // console.log(dataName.split(" ")[0]);
+        // console.log(dataArrName);
+        // const dataFirstName = dataArrName[0];
+        const dataFirstName = dataName.split(" ")[0];
         console.log(dataFirstName);
         for (let i=0; i<dataFirstName.length; i++){
-            divSelector.innerHTML += `<li class="result__box"> ${dataFirstName[i]}</li>`;
+            listSelector.innerHTML += `<li class="result__box"> ${dataFirstName[i]}</li>`;
         }
     });
     
-}
- 
+} 
 
 btnSelector.addEventListener('click', searcher);
 
