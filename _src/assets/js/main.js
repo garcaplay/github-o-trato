@@ -5,8 +5,24 @@ const btnSelector= document.querySelector('.main__btn');
 const divSelector= document.querySelector('.main__result');
 
 function searcher(){
+    fetch(`https://api.github.com/users/${inputSelector.value}`)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) { 
+
+        const dataName = data.name;
+        const dataArrName = dataName.split(" ");
+        console.log(dataArrName);
+        const dataFirstName = dataArrName[0];
+        console.log(dataFirstName);
+        for (let i=0; i<dataFirstName.length; i++){
+            divSelector.innerHTML += `<li class="result__box"> ${dataFirstName[i]}</li>`;
+        }
+    });
     
 }
+ 
 
 btnSelector.addEventListener('click', searcher);
 
