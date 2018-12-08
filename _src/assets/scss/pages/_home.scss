@@ -3,6 +3,7 @@ body{
     padding: 0;
     height: 100vh;
     box-sizing: border-box;
+    font-family: 'Patua One', cursive;
 }
 .page__main{
     background-color: $orange-bg;
@@ -39,8 +40,12 @@ body{
 .main__input{
     width: 200px;
     font-size: 18px;
+    font-family: inherit;
     color: $grey;
     padding-left: 10px;
+    @media all and (min-width: 768px){
+        font-size: 20px;
+    }
 }
 
 .main__btn{
@@ -51,7 +56,11 @@ body{
     width: 100px;
     height: 40px;
     font-size: 18px;
+    font-family: inherit;
     color: $grey;
+    @media all and (min-width: 768px){
+        font-size: 20px;
+    }
 }
 
 .result__list{
@@ -72,17 +81,23 @@ body{
     color: $grey;
     text-transform: uppercase;
     font-weight: bold;
-    min-width: 40px;
+    width: 50px;
     height: 80px;
     margin-right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 3px 1px 3px $grey;
     &:first-child{
         margin-left: 0px;
     }
     &:last-child{
         margin-right: 0px;
+    }
+    @media all and (min-width: 768px){
+        font-size: 80px;
+        width: 60px;
+        height: 100px;
     }
 }
 
