@@ -85,3 +85,10 @@ body{
         margin-right: 0px;
     }
 }
+
+.message{
+    border: 2px solid $grey;
+    background-color: $grey-o;
+    padding: 10px;
+    color: $white;
+}
